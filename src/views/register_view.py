@@ -63,7 +63,7 @@ class RegisterView:
             ),
         ).pack(padx=32, pady=(0, 28))
 
-        footer = ctk.CTkFrame(wrapper, fg_color="transparent")
+        footer = ctk.CTkFrame(main, fg_color="transparent")
         footer.pack(pady=(18, 0))
 
         ctk.CTkLabel(
