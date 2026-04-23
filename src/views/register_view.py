@@ -3,24 +3,24 @@ import customtkinter as ctk
 
 class RegisterView:
     def __init__(self, root, on_register, on_back):
-        wrapper = ctk.CTkFrame(root, fg_color="transparent")
-        wrapper.pack(expand=True)
+        main = ctk.CTkFrame(root, fg_color="transparent")
+        main.pack(expand=True)
 
         ctk.CTkLabel(
-            wrapper,
+            main,
             text="Criar Conta",
             font=("Arial", 26, "bold"),
         ).pack(pady=(0, 4))
 
         ctk.CTkLabel(
-            wrapper,
+            main,
             text="Preencha os dados para se registrar",
             font=("Arial", 12),
             text_color="gray60",
         ).pack(pady=(0, 24))
 
         card = ctk.CTkFrame(
-            wrapper, corner_radius=14, border_width=1, border_color="#3a3a4a"
+            main, corner_radius=14, border_width=1, border_color="#3a3a4a"
         )
         card.pack(padx=20)
 
