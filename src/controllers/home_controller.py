@@ -3,7 +3,7 @@ from config.database import Database
 class HomeController:
     def __init__(self, root):
         self.root = root
-        self.db = Database('data/db.json')
+        self.db = Database()
 
     def home_view(self, username: str) -> None:
         from src.views.home_view import HomeView

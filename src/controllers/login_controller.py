@@ -1,10 +1,9 @@
 from tkinter import messagebox
 from config.database import Database
-
 class LoginController:
     def __init__(self, root):
         self.root = root
-        self.db = Database('data/db.json')
+        self.db = Database()
 
     def login_view(self) -> None:
         from src.views.login_view import LoginView
@@ -30,7 +29,8 @@ class LoginController:
         RegisterController(self.root).register_view()
 
     def validate_credentials(self, username: str, password: str) -> bool:
+        passwordHash = self.db.hashPassword(password)
         for user in self.db.getUsers():
-            if user["username"] == username and user["password"] == password:
+            if user["username"] == username and user["password"] == passwordHash:
                 return True
         return False

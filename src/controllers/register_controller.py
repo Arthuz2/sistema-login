@@ -4,7 +4,7 @@ from config.database import Database
 class RegisterController:
     def __init__(self, root):
         self.root = root
-        self.db = Database('data/db.json')
+        self.db = Database()
 
     def register_view(self) -> None:
         from src.views.register_view import RegisterView

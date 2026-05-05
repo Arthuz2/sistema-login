@@ -1,14 +1,17 @@
 from os import path
+import hashlib
 import json
 
 class Database:
-  def __init__(self, dbPath: str):
-    self.dbPath: str = path.abspath(dbPath)
+  def __init__(self):
+    self.dbPath: str = path.abspath('data/db.json')
+
+    adminPasswordHash = self.hashPassword("1234")
 
     adminUser = {
       "id": 0,
       "username": "admin",
-      "password": "1234"
+      "password": adminPasswordHash
     }
 
     if not path.exists(self.dbPath):
@@ -24,7 +27,7 @@ class Database:
     newUser = {
       "id": len(users),
       "username": username,
-      "password": password
+      "password": self.hashPassword(password)
     }
     
     users.append(newUser)
@@ -33,3 +36,6 @@ class Database:
 
   def isAdmin(self, username: str) -> bool:
     return username == "admin"
+
+  def hashPassword(self, password: str) -> str:
+    return hashlib.sha256(password.encode()).hexdigest()
