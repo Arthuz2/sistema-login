@@ -13,7 +13,7 @@ class TaskView:
 
         ctk.CTkLabel(
             header,
-            text="Sistema de Login",
+            text="Sistema de Tarefas",
             font=("Arial", 15, "bold"),
             text_color="gray70",
         ).pack(side="left", padx=24)
