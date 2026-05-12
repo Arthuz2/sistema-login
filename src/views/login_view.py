@@ -7,7 +7,7 @@ class LoginView:
 
         ctk.CTkLabel(
             main,
-            text="Sistema de Login",
+            text="Sistema de Tarefas",
             font=("Arial", 26, "bold"),
         ).pack(pady=(0, 4))
 

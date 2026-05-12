@@ -1,4 +1,4 @@
-# Sistema de Login
+# Sistema de Tarefas
 
 Projeto desenvolvido em grupo para a disciplina de **Algoritmos e Programação**, ministrada pelo professor **Carlos**.
 

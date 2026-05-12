@@ -6,12 +6,12 @@ class HomeController:
         self.db = Database()
 
     def home_view(self, username: str) -> None:
-        from src.views.home_view import HomeView
-        self.root.clear_screen()
-        self.root.title("Início")
-
-        users = self.db.getUsers() if self.db.isAdmin(username) else None
-        HomeView(self.root, username=username, on_logout=self.go_to_login, users=users)
+        if self.db.isAdmin(username):
+            from src.controllers.admin_controller import AdminController
+            AdminController(self.root).admin_view()
+        else:
+            from src.controllers.task_controller import TaskController
+            TaskController(self.root).task_view(username)
 
     def go_to_login(self) -> None:
         from src.controllers.login_controller import LoginController
