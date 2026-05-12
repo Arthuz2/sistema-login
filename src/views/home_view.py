@@ -97,7 +97,7 @@ class HomeView:
         scrollable.pack(fill="both", expand=True, padx=6, pady=(0, 6))
 
         usersWithoutAdmin = list(filter(lambda user: user["username"] != "admin", users))
-          
+
         if not usersWithoutAdmin:
           ctk.CTkLabel(
             scrollable,
